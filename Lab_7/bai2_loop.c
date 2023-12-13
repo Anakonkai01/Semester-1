@@ -7,7 +7,7 @@ int binary_search(int a[],int n);
 void inputArray(int a[]);
 void outputArray(int a[]);
 void bubble_sort(int a[]);
-int binary_search_recursion(int a[],int n,int l, int r,int m);
+
 
 int main(){
     int a[SIZE];
@@ -31,16 +31,7 @@ int main(){
     }
 
     printf("\n");
-    // recursion
-    int l = 0, r = SIZE - 1,m = l + (r-l)/2;
-    if (binary_search_recursion(a,n,l,r,m) == -1)
-    {
-        printf("The number was not found in the array using recursion");
-    }
-    else
-    {
-        printf("The number was found at index using recursion = %d",binary_search(a,n));
-    }
+
     return 0;
 }
 
@@ -82,24 +73,6 @@ int binary_search(int a[],int n){
     return -1;
 }
 
-int binary_search_recursion(int a[],int n,int l, int r,int m){
-    m = l + (r-l)/2;
-    if (a[m] == n)
-    {
-        return m;
-    }
-    else if (a[m] < n)
-    {
-        return binary_search_recursion(a,n,m+1,r,m);
-    }
-    else if (a[m] > n){
-        return binary_search_recursion(a,n,l,m-1,m);
-    }
-    else
-    {
-        return - 1;
-    }
-}
 
 
 void bubble_sort(int a[]){
